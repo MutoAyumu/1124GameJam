@@ -8,10 +8,12 @@ public class FishScript : MonoBehaviour
     [SerializeField] int _score = 100;
     [SerializeField] float _moveSpeed = 1;
     [SerializeField] string _areaTag = "";
+    [SerializeField] string _fishHookTag = "";
     Rigidbody2D _rb;
     float _noiseY;
+    bool isMove = true;
 
-    public int Score { get => _score;}
+    public int Score { get => _score; }
 
     private void Start()
     {
@@ -26,13 +28,23 @@ public class FishScript : MonoBehaviour
     }
     void Move()
     {
-        _rb.velocity = this.transform.right * Mathf.PerlinNoise(Time.time, _noiseY) * _moveSpeed;
+        if (isMove)
+            _rb.velocity = this.transform.right * Mathf.PerlinNoise(Time.time, _noiseY) * _moveSpeed;
+        else
+            _rb.velocity = Vector2.zero;
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if(collision.gameObject.CompareTag(_areaTag))
+        if (collision.gameObject.CompareTag(_areaTag))
         {
             Destroy(this.gameObject);
+        }
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag(_fishHookTag))
+        {
+            isMove = false;
         }
     }
 }
