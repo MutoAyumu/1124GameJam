@@ -26,7 +26,7 @@ public class MenuManager : MonoBehaviour
     /// <param name="useMoney"></param>
     public void PowerUp(float useMoney)
     {
-        if (ScoreManager.Money < useMoney)
+        if (ScoreManager.Money < useMoney || _fishingLine.PullPower>2)
         {
             return;
         }
@@ -44,7 +44,7 @@ public class MenuManager : MonoBehaviour
     /// <param name="useMoney"></param>
     public void ThrowUp(float useMoney)
     {
-        if (ScoreManager.Money < useMoney)
+        if (ScoreManager.Money < useMoney || _fishingLine.ThrowPower > 2)
         {
             return;
         }
@@ -63,7 +63,7 @@ public class MenuManager : MonoBehaviour
 
     public void IncreaseHook(float useMoney)
     {
-        if (ScoreManager.Money < useMoney)
+        if (ScoreManager.Money < useMoney || _fishingLine.HookNumber > 2)
         {
             return;
         }
