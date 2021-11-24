@@ -6,6 +6,8 @@ public class MenuManager : MonoBehaviour
 {
     //メニューを表示するパネル
     [SerializeField] GameObject _menuPanel;
+    [SerializeField] GameObject _skillPanel;
+    [SerializeField] GameObject _omamoriPanel;
     //釣り糸のスクリプトを参照
     [SerializeField] FishingLine _fishingLine;
     //引き上げる速度の上昇値
@@ -71,5 +73,14 @@ public class MenuManager : MonoBehaviour
             ScoreManager.Money -= useMoney;
             _fishingLine.HookNumber += _powerUp;
         }
+    }
+
+    public void BuckToMain()
+    {
+        _skillPanel.SetActive(false);
+    }
+    public void BuckToSkill()
+    {
+        _omamoriPanel.SetActive(false);
     }
 }
