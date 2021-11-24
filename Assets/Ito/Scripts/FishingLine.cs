@@ -4,23 +4,30 @@ using UnityEngine;
 
 public class FishingLine : MonoBehaviour
 {
-    public float Power 
+    public float PullPower 
     {
-        get { return _power; }
-        set { _power = value; }
+        get { return _pullPower; }
+        set { _pullPower = value; }
     }
-    [SerializeField]private float _power;
+    public int ThrowPower { get =>  _throwPower; set => _throwPower = value; }
+    public int HookNumber { get => _hookNumber; set => _hookNumber = value; }
+
+    [SerializeField]private float _pullPower;
+    [SerializeField]private int _throwPower;
+    [SerializeField] private int _hookNumber; 
+    private Animator _anim = null;
     private float _movePos = 0.01f;
     private bool _isCatchUp = false;
+
     private void Start()
     {
-
+        _anim = GetComponent<Animator>();
     }
     private void Update()
     {
         if(Input.GetMouseButton(0) && !_isCatchUp)
         {
-            this.gameObject.transform.Translate(0, _movePos * _power, 0);
+            this.gameObject.transform.Translate(0, _movePos * _pullPower, 0);
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)
@@ -36,5 +43,45 @@ public class FishingLine : MonoBehaviour
         {
             _isCatchUp = false;
         }
+    }
+    public void GameStart()
+    {
+        switch (_hookNumber)
+        {
+            case 1:
+                break;
+            case 2:
+                Hook2Active();
+                break;
+            case 3:
+                Hook3Active();
+                break;
+        }
+        switch (_throwPower)
+        {
+            case 1:
+                _anim.Play("Power1");
+                break;
+            case 2:
+                _anim.Play("Power2");
+                break;
+            case 3:
+                _anim.Play("Power3");
+                break;
+        }
+    }
+    private void Hook1Active()
+    {
+    }
+    private void Hook2Active()
+    {
+        var hook2 = transform.Find("Fishhook2");
+        hook2.gameObject.SetActive(true);
+    }
+    private void Hook3Active()
+    {
+        Hook2Active();
+        var hook3 = transform.Find("Fishhook3");
+        hook3.gameObject.SetActive(true);
     }
 }
