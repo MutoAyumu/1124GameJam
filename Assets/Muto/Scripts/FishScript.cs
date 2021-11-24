@@ -7,8 +7,11 @@ public class FishScript : MonoBehaviour
 {
     [SerializeField] int _score = 100;
     [SerializeField] float _moveSpeed = 1;
+    [SerializeField] string _areaTag = "";
     Rigidbody2D _rb;
     float _noiseY;
+
+    public int Score { get => _score;}
 
     private void Start()
     {
@@ -24,5 +27,12 @@ public class FishScript : MonoBehaviour
     void Move()
     {
         _rb.velocity = this.transform.right * Mathf.PerlinNoise(Time.time, _noiseY) * _moveSpeed;
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if(collision.gameObject.CompareTag(_areaTag))
+        {
+            Destroy(this.gameObject);
+        }
     }
 }
