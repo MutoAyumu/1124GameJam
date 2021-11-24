@@ -34,18 +34,16 @@ public class FishScript : MonoBehaviour
         else
             _rb.velocity = Vector2.zero;
     }
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        if (collision.gameObject.CompareTag(_areaTag))
-        {
-            Destroy(this.gameObject);
-        }
-    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag(_fishHookTag))
         {
             isMove = false;
+        }
+
+        if (collision.gameObject.CompareTag(_areaTag))
+        {
+            Destroy(this.gameObject);
         }
     }
 }
