@@ -21,7 +21,7 @@ public class FishingLine : MonoBehaviour
     private bool _isCatchUp = false;
 
     private float _score;
-
+    private FishingHook _fishingHook;
     private void Start()
     {
         _anim = GetComponent<Animator>();
@@ -42,9 +42,12 @@ public class FishingLine : MonoBehaviour
             var gameObjects = GameObject.FindGameObjectsWithTag("Hook");
             foreach(var g in gameObjects)
             {
-                var fish = g.gameObject.GetComponent<FishingHook>();
-                _score = fish.Score;
+                var hook = g.gameObject.GetComponent<FishingHook>();
+                _score = hook.Score;
                 _scoreManager.AddMoney(_score);
+
+                var fish = hook.FishScript;
+                Destroy(fish.gameObject);
             }
         }
     }
