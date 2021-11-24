@@ -28,7 +28,8 @@ public class FishingHook : MonoBehaviour
             _score = fish.Score;
 
             _fishScript = fish;
-
+            var fishCollider = collision.GetComponent<Collider2D>();
+            fishCollider.enabled = false;
             var collider = GetComponent<Collider2D>();
             collider.enabled = false;
 
