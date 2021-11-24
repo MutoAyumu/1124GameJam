@@ -22,6 +22,7 @@ public class FishingLine : MonoBehaviour
     private void Start()
     {
         _anim = GetComponent<Animator>();
+        GameStart();
     }
     private void Update()
     {
@@ -83,5 +84,9 @@ public class FishingLine : MonoBehaviour
         Hook2Active();
         var hook3 = transform.Find("Fishhook3");
         hook3.gameObject.SetActive(true);
+    }
+    private void ApplyRootMotion()
+    {
+        _anim.applyRootMotion = true;
     }
 }
