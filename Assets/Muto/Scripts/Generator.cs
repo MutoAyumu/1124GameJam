@@ -5,6 +5,7 @@ using UnityEngine;
 public class Generator : MonoBehaviour
 {
     [SerializeField] GameObject[] _fishs = default;
+    [SerializeField] int _rarityFish = 3;
     [SerializeField] GameObject _fishGroup = default;
     [SerializeField] Transform[] _pos = default;
     [SerializeField, Tooltip("XがMin　YがMax")] Vector2 _instanceInterval = Vector2.zero;
@@ -12,6 +13,7 @@ public class Generator : MonoBehaviour
 
     float _timer;
     float _setTime;
+    int _charmNum;
 
     private void Start()
     {
@@ -23,14 +25,15 @@ public class Generator : MonoBehaviour
 
         if (_timer > _setTime)
         {
-            Debug.Log(Mathf.Floor(_setTime));
             Generate();
         }
+
+        _charmNum = Item.IsCharm ? 0 : _rarityFish;//charmがtrueの時にNumを０にする
     }
     void　Generate()
     {
         var pos = new Vector2(this.transform.position.x, Random.Range(_pos[0].position.y, _pos[1].position.y));
-        var fish = Instantiate(_fishs[Random.Range(0, _fishs.Length)], pos, Quaternion.identity);
+        var fish = Instantiate(_fishs[Random.Range(0, _fishs.Length - _charmNum + 1)], pos, Quaternion.identity);//charmがfalseの時はRangeの最大を少なくする
 
         if(_flip)
         {
