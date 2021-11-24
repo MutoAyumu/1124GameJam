@@ -25,6 +25,10 @@ public class ScoreManager : MonoBehaviour
 
     public void AddMoney(float money)
     {
+        if (Item.IsTrader)
+        {
+            money *= 3;
+        }
         //釣り上げた魚を参照してmoney変数に足していく
         //お金がヌルヌル動くコルーチンを実行
         StartCoroutine(ScoreAnimation(_money, _money + money, _duration));
