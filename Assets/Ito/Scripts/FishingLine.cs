@@ -14,10 +14,13 @@ public class FishingLine : MonoBehaviour
 
     [SerializeField]private float _pullPower;
     [SerializeField]private int _throwPower;
-    [SerializeField] private int _hookNumber; 
+    [SerializeField] private int _hookNumber;
+    [SerializeField] ScoreManager _scoreManager;
     private Animator _anim = null;
     private float _movePos = 0.01f;
     private bool _isCatchUp = false;
+
+    private float _score;
 
     private void Start()
     {
@@ -36,6 +39,13 @@ public class FishingLine : MonoBehaviour
         if (collision.tag == "Finish")
         {
             _isCatchUp = true;
+            var gameObjects = GameObject.FindGameObjectsWithTag("Hook");
+            foreach(var g in gameObjects)
+            {
+                var fish = g.gameObject.GetComponent<FishingHook>();
+                _score = fish.Score;
+                _scoreManager.AddMoney(_score);
+            }
         }
     }
     private void OnTriggerExit2D(Collider2D collision)
