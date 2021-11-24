@@ -49,6 +49,7 @@ public class FishingLine : MonoBehaviour
                 var fish = hook.FishScript;
                 Destroy(fish.gameObject);
             }
+            GameStart();
         }
     }
     private void OnTriggerExit2D(Collider2D collision)
