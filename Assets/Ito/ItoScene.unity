@@ -310,7 +310,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 594824537}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.297, y: 7.89, z: 0}
+  m_LocalPosition: {x: 0.297, y: 9.4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1261315048}
@@ -330,7 +330,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c8344d09d0e4ab4bad31b0125cd953f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _power: 0.0133
+  _power: 0
 --- !u!61 &594824540
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -388,6 +388,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1261315048}
   - component: {fileID: 1261315047}
+  - component: {fileID: 1261315049}
   m_Layer: 0
   m_Name: Fishhook
   m_TagString: Untagged
@@ -459,6 +460,22 @@ Transform:
   m_Father: {fileID: 594824538}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!58 &1261315049
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1261315046}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.27, y: -1.06}
+  serializedVersion: 2
+  m_Radius: 1.09
 --- !u!1 &1794707338
 GameObject:
   m_ObjectHideFlags: 0
@@ -598,8 +615,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1794707338}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.016653782, y: 2.3222117, z: 0.34382}
+  m_LocalPosition: {x: 0, y: 5.3, z: 0}
+  m_LocalScale: {x: 0.016653782, y: 5.057911, z: 0.34382}
   m_Children: []
   m_Father: {fileID: 594824538}
   m_RootOrder: 1

@@ -8,22 +8,19 @@ public class FishingLine : MonoBehaviour
     {
         get { return _power; }
         set { _power = value; }
-    } 
-    [SerializeField,  Range(0.01f, 0.1f)] float _power;
-    bool _isCatchUp = false;
+    }
+    [SerializeField]private float _power;
+    private float _movePos = 0.01f;
+    private bool _isCatchUp = false;
     private void Start()
     {
 
     }
     private void Update()
     {
-        if(Input.GetMouseButton(0))
+        if(Input.GetMouseButton(0) && !_isCatchUp)
         {
-            this.gameObject.transform.Translate(0, -_power , 0);
-        }
-        else if(!_isCatchUp)
-        {
-           this.gameObject.transform.Translate(0, _power, 0);
+            this.gameObject.transform.Translate(0, _movePos * _power, 0);
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)
