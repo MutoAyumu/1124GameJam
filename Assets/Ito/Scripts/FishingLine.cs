@@ -49,7 +49,6 @@ public class FishingLine : MonoBehaviour
                 var fish = hook.FishScript;
                 Destroy(fish.gameObject);
             }
-            GameStart();
         }
     }
     private void OnTriggerExit2D(Collider2D collision)
@@ -75,6 +74,7 @@ public class FishingLine : MonoBehaviour
         switch (_throwPower)
         {
             case 1:
+                _anim.SetBool("on", false);
                 _anim.Play("Power1");
                 break;
             case 2:
@@ -84,6 +84,7 @@ public class FishingLine : MonoBehaviour
                 _anim.Play("Power3");
                 break;
         }
+        ApplyRootMotion();
     }
     private void Hook1Active()
     {
@@ -102,5 +103,11 @@ public class FishingLine : MonoBehaviour
     private void ApplyRootMotion()
     {
         _anim.applyRootMotion = true;
+    }
+    public void ApplyRootMotionOff()
+    {
+        _anim.applyRootMotion = false;
+        _anim.SetBool("on", true);
+        GameStart();
     }
 }
