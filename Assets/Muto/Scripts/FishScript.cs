@@ -6,6 +6,7 @@ using UnityEngine;
 public class FishScript : MonoBehaviour
 {
     [SerializeField] int _score = 100;
+    [SerializeField] string _name = "";
     [SerializeField] float _moveSpeed = 1;
     [SerializeField] string _areaTag = "";
     [SerializeField] string _fishHookTag = "";
