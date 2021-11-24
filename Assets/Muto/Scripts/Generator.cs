@@ -6,6 +6,7 @@ public class Generator : MonoBehaviour
 {
     [SerializeField] GameObject[] _fishs = default;
     [SerializeField] GameObject _fishGroup = default;
+    [SerializeField] Transform[] _pos = default;
     [SerializeField, Tooltip("XがMin　YがMax")] Vector2 _instanceInterval = Vector2.zero;
 
     float _timer;
@@ -27,7 +28,8 @@ public class Generator : MonoBehaviour
     }
     void　Generate()
     {
-        var fish = Instantiate(_fishs[Random.Range(0, _fishs.Length)], this.transform.position, Quaternion.identity);
+        var pos = new Vector2(this.transform.position.x, Random.Range(_pos[0].position.y, _pos[1].position.y));
+        var fish = Instantiate(_fishs[Random.Range(0, _fishs.Length)], pos, Quaternion.identity);
 
         _timer = 0;
         _setTime = Random.Range(_instanceInterval.x, _instanceInterval.y);
