@@ -66,6 +66,7 @@
   <ItemGroup>
     <Compile Include="Assets\Harashima\Scripts\Item.cs" />
     <Compile Include="Assets\Harashima\Scripts\MenuManager.cs" />
+    <Compile Include="Assets\Harashima\Scripts\SceneChanger.cs" />
     <Compile Include="Assets\Harashima\Scripts\ScoreManager.cs" />
     <Compile Include="Assets\Harashima\Scripts\TimeManager.cs" />
     <Compile Include="Assets\Ito\Scripts\FishingHook.cs" />

@@ -2021,6 +2021,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8245672222909152807, guid: f63f7c96f3caa1c4b81ff11b570180d3,
+        type: 3}
+      propertyPath: _scoreManager
+      value: 
+      objectReference: {fileID: 335137908}
     - target: {fileID: 8245672223277684297, guid: f63f7c96f3caa1c4b81ff11b570180d3,
         type: 3}
       propertyPath: _fishTag
