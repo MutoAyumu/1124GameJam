@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 5898791279215111054}
   m_Layer: 0
   m_Name: Fish1
-  m_TagString: Untagged
+  m_TagString: Fish
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -118,9 +118,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _score: 100
+  _name: 
   _moveSpeed: 4
-  _areaTag: Finish
-  _fishHookTag: Player
+  _areaTag: GameController
+  _fishHookTag: Hook
 --- !u!70 &5898791279215111054
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
