@@ -28,14 +28,15 @@ public class Generator : MonoBehaviour
             Generate();
         }
 
-        _charmNum = Item.IsCharm ? 0 : _rarityFish;//charmがtrueの時にNumを０にする
+        //_charmNum = Item.IsCharm ? 0 : _rarityFish;//charmがtrueの時にNumを０にする
     }
     void　Generate()
     {
         var pos = new Vector2(this.transform.position.x, Random.Range(_pos[0].position.y, _pos[1].position.y));
-        var fish = Instantiate(_fishs[Random.Range(0, _fishs.Length - _charmNum + 1)], pos, Quaternion.identity);//charmがfalseの時はRangeの最大を少なくする
+        //var fish = Instantiate(_fishs[Random.Range(0, _fishs.Length - _charmNum + 1)], pos, Quaternion.identity);//charmがfalseの時はRangeの最大を少なくする
+        var fish = Instantiate(_fishs[Random.Range(0, _fishs.Length)], pos, Quaternion.identity);
 
-        if(_flip)
+        if (_flip)
         {
             fish.transform.Rotate(0, 180, 0);
         }

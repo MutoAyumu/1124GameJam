@@ -4,16 +4,15 @@ using UnityEngine;
 
 public class FishingHook : MonoBehaviour
 { 
-    public float Score { get => _score; set => _score = value; }
+    public int Score { get => _score; set => _score = value; }
     public FishScript FishScript { get => _fishScript; set => _fishScript = value; }
 
     [SerializeField] string _fishTag;
     [SerializeField] Vector3 _offSet;
-    private float _score;
-    private float _fishRotate = 90f;
+    private int _score;
+    [SerializeField] float _fishRotate = 90f;
     private bool _isHit = false;
     private FishScript _fishScript;
-
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -22,7 +21,7 @@ public class FishingHook : MonoBehaviour
             if (_isHit) return;
 
             var fish = collision.GetComponent<FishScript>();
-            fish.transform.SetParent(transform);
+            fish.transform.SetParent(this.transform);
             fish.transform.position = this.transform.position + _offSet;
             fish.transform.Rotate(0f, 0f, _fishRotate);
             _score = fish.Score;
