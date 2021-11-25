@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] Text _timerText = default;
     [SerializeField] float _timeLimit = 60f;
     [SerializeField] Text _moneyText = default;
+    [SerializeField] Text _endMoneyText = default;
     [SerializeField] float _countTime = 3.5f;
     [SerializeField] Text _countTimerText = default;
     [SerializeField] UnityEvent _startEvent = default;
@@ -39,14 +40,15 @@ public class GameManager : MonoBehaviour
         if (isOn && !isEnd)
         {
             _timeLimit -= Time.deltaTime;
-            _timerText.text = "Timer : " + _timeLimit.ToString("F0") + "秒";
+            _timerText.text = "時間 : " + _timeLimit.ToString("F0") + "秒";
 
-            _moneyText.text = "Money : " + _currentMoney.ToString("F0") + "円";
+            _moneyText.text = "お金 : " + _currentMoney.ToString("F0") + "円";
         }
 
         if (_timeLimit <= 0 && !isEnd)
         {
             _endEvent.Invoke();
+            _endMoneyText.text = _currentMoney.ToString("F0") + "円";
             isEnd = true;
         }
     }

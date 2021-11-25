@@ -1,10 +1,7 @@
 fileFormatVersion: 2
-guid: 4f8bc080544fd8e43912502fd3dcf486
+guid: 90620dee99a6a7d438581b1449c739ab
 TextureImporter:
-  internalIDToNameTable:
-  - first:
-      213: 7403397918193033667
-    second: tsuri_hari 1_0
+  internalIDToNameTable: []
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -43,13 +40,13 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 300
-  spriteBorder: {x: 136, y: 217, z: 101, w: 174}
+  spritePixelsToUnits: 600
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
@@ -100,28 +97,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites:
-    - serializedVersion: 2
-      name: tsuri_hari 1_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 23
-        width: 248
-        height: 281
-      alignment: 9
-      pivot: {x: 0.5718619, y: 0.98720086}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3c123c48e272eb660800000000000000
-      internalID: 7403397918193033667
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
+    sprites: []
     outline: []
     physicsShape: []
     bones: []

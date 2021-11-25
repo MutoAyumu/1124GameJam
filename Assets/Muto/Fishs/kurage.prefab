@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &4250781429513031713
+--- !u!1 &747089330517523352
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,39 +8,39 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4250781429513031716}
-  - component: {fileID: 4250781429513031717}
-  - component: {fileID: 4250781429513031718}
-  - component: {fileID: 4250781429513031719}
-  - component: {fileID: 4250781429513031712}
+  - component: {fileID: 747089330517523357}
+  - component: {fileID: 747089330517523356}
+  - component: {fileID: 747089330517523359}
+  - component: {fileID: 747089330517523358}
+  - component: {fileID: 747089330517523353}
   m_Layer: 0
-  m_Name: aji
+  m_Name: kurage
   m_TagString: Fish
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4250781429513031716
+--- !u!4 &747089330517523357
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4250781429513031713}
+  m_GameObject: {fileID: 747089330517523352}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.94, y: -2.4075017, z: 0}
+  m_LocalPosition: {x: -4.56, y: 0.15, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &4250781429513031717
+--- !u!212 &747089330517523356
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4250781429513031713}
+  m_GameObject: {fileID: 747089330517523352}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -73,7 +73,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 63aef1fdafc40524aa6bd405c2869dce, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 90620dee99a6a7d438581b1449c739ab, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1
   m_FlipY: 0
@@ -84,14 +84,14 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!50 &4250781429513031718
+--- !u!50 &747089330517523359
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4250781429513031713}
+  m_GameObject: {fileID: 747089330517523352}
   m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
@@ -105,36 +105,36 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &4250781429513031719
+--- !u!114 &747089330517523358
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4250781429513031713}
+  m_GameObject: {fileID: 747089330517523352}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fdde310cf10f8cb4a98f35638c270642, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _score: 100
+  _score: -700
   _name: 
-  _moveSpeed: 6
+  _moveSpeed: 5
   _areaTag: GameController
   _fishHookTag: Hook
---- !u!70 &4250781429513031712
+--- !u!70 &747089330517523353
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4250781429513031713}
+  m_GameObject: {fileID: 747089330517523352}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.08315325, y: 0.051970616}
-  m_Size: {x: 2.5609899, y: 1.4384292}
+  m_Offset: {x: -0.0020321612, y: -0.0013899802}
+  m_Size: {x: 1.72264, y: 1.671943}
   m_Direction: 1
